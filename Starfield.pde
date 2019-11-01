@@ -1,10 +1,13 @@
 Particle[] hi;
 PImage photo;
+PImage phot;
 void setup()
 {
 	size(500,500);
 	photo = loadImage("planet.png");
-	hi = new Particle[100];
+	phot = loadImage("galaxy.png");
+	hi = new Particle[200];
+
 	for(int i=0; i<hi.length;i++){
 		hi[i] = new Particle(250,250);
 		hi[0]=new OddballParticle();
@@ -13,6 +16,7 @@ void setup()
 void draw()
 {
 	background(255);
+	image(phot,0,0, 500, 500);
 	for(int i=0; i<hi.length; i++){
 		hi[i].move();
 		hi[i].show();
@@ -65,8 +69,8 @@ class OddballParticle extends Particle
 	}
 	void move()
 	{
-		myX=myX+Math.random()*3-2;
-		myY=myY+Math.random()*3-2;
+		myX=myX+Math.random()*5-1;
+		myY=myY+Math.random()*5-1;
 	}
 	void show()
 	{
